@@ -77,8 +77,10 @@ static LocalNotificationManager* manager = nil;
 {
     UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:item.timeInteval repeats:item.repeat];
     
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:[self contentWithInfo:item] trigger:trigger];
+    UNNotificationContent * content = [self contentWithInfo:item];
     
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:content trigger:trigger];
+
     [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
         NSLog(@"添加时间戳定时推送 : %@", error ? [NSString stringWithFormat:@"error : %@", error] : @"success");
         if (!error) {
@@ -157,6 +159,7 @@ static LocalNotificationManager* manager = nil;
     }else{
         content.sound = [UNNotificationSound soundNamed:item.sound];
     }
+
     return content;
 }
 

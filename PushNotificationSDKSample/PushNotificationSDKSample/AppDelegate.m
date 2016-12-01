@@ -20,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[UserNotificationCenter defaultCenter] registRemoteNotificationWithFinishBlock:^(BOOL result, id  _Nullable response) {
+        
+    }];
+    
+    
     NSDictionary* userinfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (userinfo)
     {

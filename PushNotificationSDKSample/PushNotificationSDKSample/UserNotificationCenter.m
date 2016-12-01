@@ -12,6 +12,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "LocalNotificationItem.h"
 #import "localnotificationManager.h"
+#import "RemoteNotificaitonManager.h"
 
 static UserNotificationCenter* manager = nil;
 
@@ -25,6 +26,12 @@ static UserNotificationCenter* manager = nil;
 
 
 @implementation UserNotificationCenter
+
+static inline CGFloat version (){
+    CGFloat version = [[UIDevice currentDevice].systemVersion floatValue];
+    return version;
+}
+
 
 
 - (instancetype)init
@@ -54,10 +61,13 @@ static UserNotificationCenter* manager = nil;
 
 - (void)registLocaNotificaitonWithInfo:(nonnull LocalNotificationItem*)item  FinishBlock:(callBack) callBack
 {
-    [[LocalNotificationManager shareInstance] registNotificaitonWithInfo:item FinishBlock:^(BOOL result, id  _Nullable response) {
-        callBack(result,response);
-    }];
-
+    if (version() < 10.0) {
+        
+    }else{
+        [[LocalNotificationManager shareInstance] registNotificaitonWithInfo:item FinishBlock:^(BOOL result, id  _Nullable response) {
+            callBack(result,response);
+        }];
+    }
 }
 
 
@@ -70,7 +80,12 @@ static UserNotificationCenter* manager = nil;
 #pragma mark - 远程推送
 
 
-
+-(void)registRemoteNotificationWithFinishBlock:(callBack)block
+{
+    [[RemoteNotificaitonManager shareInstance]  registRemoteNotificationWithFinishBlock:^(BOOL result, id  _Nullable response) {
+        
+    }];
+}
 
 
 

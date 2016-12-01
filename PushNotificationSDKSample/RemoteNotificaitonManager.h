@@ -17,6 +17,7 @@ typedef void(^callBack)(BOOL result ,_Nullable id response);
 
 
 +(RemoteNotificaitonManager*) shareInstance;
+-(void)registRemoteNotificationWithFinishBlock:(callBack)block;
 
 
 @end

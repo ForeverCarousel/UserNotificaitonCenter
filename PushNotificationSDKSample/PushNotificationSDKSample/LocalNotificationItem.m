@@ -28,13 +28,13 @@
     return self;
 }
 
--(void)setTimeInteval:(NSTimeInterval)timeInteval
+-(void)setRepeat:(BOOL)repeat
 {
-    if (timeInteval < 60) {
-        _timeInteval  = 60;
-    }
-}
+//    if (repeat && _timeInteval < 60) {
+//        _timeInteval  = 60;
+//    }
 
+}
 -(void)setSound:(NSString *)sound
 {
     NSString *valuedSound = [sound stringByReplacingOccurrencesOfString:@" " withString:@""];
