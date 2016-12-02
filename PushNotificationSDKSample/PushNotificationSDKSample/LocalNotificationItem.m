@@ -24,6 +24,8 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
         _notificationID = strDate;
+        
+        _category = LocalNotificationCategory0;
     }
     return self;
 }

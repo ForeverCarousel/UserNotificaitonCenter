@@ -11,6 +11,10 @@
 
 @interface ViewController ()
 
+@property (assign, nonatomic )LocalNotificationCategory ca;
+@property (nonatomic, strong) NSArray* categries;
+@property (weak, nonatomic) IBOutlet UILabel *typeLable;
+
 @end
 
 @implementation ViewController
@@ -18,10 +22,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    _ca = LocalNotificationCategory0;
+    self.categries = @[@(LocalNotificationCategory0),
+                       @(LocalNotificationCategory1),
+                       @(LocalNotificationCategory2),
+                       @(LocalNotificationCategory3)];
 
 }
 - (IBAction)changeNotifyType:(id)sender {
+    static NSInteger index = 1;
+//    _ca = [_categries[index] integerValue];
+    _ca = index;
+    NSString* t = [NSString stringWithFormat:@"第%ld种类型",(long)index];
+    if (index == 0) {
+        t = @"默认类型";
+    }
+    _typeLable.text = t;
+    index ++;
+    if (index > _categries.count - 1) {
+        index = 0;
+
+    }
+
+    NSLog(@"当前选择第%lu种类型",(unsigned long)_ca);
+    
 }
 
 - (IBAction)registeLocalNotification:(id)sender {
@@ -31,15 +55,22 @@
     item.subTitle = @"这是副标题";
     item.body = @" iOS 10 中，可以允许推送添加交互操作 action，这些 action 可以使得 App 在前台或后台执行一些逻辑代码。并且在锁屏界面通过 3d-touch 触发。如：推出键盘进行快捷回复，该功能以往只在 iMessage 中可行。";
     item.type = LocalNotificationTypeInterval;
-    item.timeInteval = 5.0f;
+    item.category = self.ca;
+    item.timeInteval = 3.0f;
     item.repeat = NO;
     
     
-    [[UserNotificationCenter defaultCenter] registLocaNotificaitonWithInfo:item FinishBlock:^(BOOL result, id  _Nullable response) {
+    [[UserNotificationCenter defaultCenter] addLocaNotificaitonWithInfo:item FinishBlock:^(BOOL result, id  _Nullable response) {
         
     }];
     
 }
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -20,7 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UserNotificationCenter defaultCenter] registRemoteNotificationWithFinishBlock:^(BOOL result, id  _Nullable response) {
+    [[UserNotificationCenter defaultCenter] removeLocalNotificaitons];
+    
+    [[UserNotificationCenter defaultCenter] registNotificationsWithFinishBlock:^(BOOL result, id  _Nullable response) {
         
     }];
     

@@ -15,6 +15,10 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
 @interface UserNotificationCenter : NSObject
 
 + (UserNotificationCenter* )defaultCenter;
+-(void)registNotificationsWithFinishBlock:(callBack)block;
+
+
+
 
 
 #pragma mark - 本地通知
@@ -25,20 +29,13 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
  @param item 推送类型 支持枚举列举的类型 版本需求高于iOS 10.0
  @param callBack 返回结果
  */
-- (void)registLocaNotificaitonWithInfo:(nonnull LocalNotificationItem*)item  FinishBlock:(callBack) callBack;
+- (void)addLocaNotificaitonWithInfo:(nonnull LocalNotificationItem*)item  FinishBlock:(nonnull callBack) callBack;
 
-
-
+-(void) removeLocalNotificaitons;
 
 
 #pragma mark - 远程通知
 
-/**
- 注册远程通知
- 
- @param block 返回结果
- */
-- (void)registRemoteNotificationWithFinishBlock:(callBack) block;
 
 
 

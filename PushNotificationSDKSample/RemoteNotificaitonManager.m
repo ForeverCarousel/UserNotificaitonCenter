@@ -42,68 +42,7 @@ static inline CGFloat version (){
     return manager;
 }
 
--(void)registRemoteNotificationWithFinishBlock:(callBack)block
-{
-    if ([self isNotifyEnable]) {
-        return;
-    }
-    
-    UIApplication* application = [UIApplication sharedApplication];
-    if (version() < 8.0)
-    {
-        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
-    }
-    else if(version() >= 8.0 && version() < 10.0)
-    {
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge categories:nil]];
-    }
-    else if(version() >= 10.0)
-    {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        UNAuthorizationOptions options = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
-        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            if (granted) {
-                //获取用户设置的通知状态
-                [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-                    NSLog(@"%@", settings);
-                }];
-                
-                //向APNS注册
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            }else{
-                
-            }
-        }];
-    }
-    
-    
-}
 
-
-//判断用户是否允许推送
--(BOOL)isNotifyEnable
-{
-    if (version() < 8.0)
-    {
-        if ([UIApplication sharedApplication].enabledRemoteNotificationTypes  == UIRemoteNotificationTypeNone)
-        {
-            return NO;
-        }
-        else
-            return YES;
-    }
-    else if (version() >= 8.0)
-    {
-        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types == UIUserNotificationTypeNone)
-        {
-            return NO;
-        }
-        else
-            return YES;
-    }
-    else
-        return NO;
-}
 
 
 

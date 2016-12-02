@@ -16,7 +16,8 @@ typedef NS_ENUM(NSUInteger, LocalNotificationType) {
 };
 
 typedef NS_ENUM(NSUInteger, LocalNotificationCategory) {
-    LocalNotificationCategory1,
+    LocalNotificationCategory0 = 0,//默认无样式
+    LocalNotificationCategory1,//这里需要提前确定好需求支持的样式
     LocalNotificationCategory2,
     LocalNotificationCategory3,
 };
@@ -32,7 +33,8 @@ typedef NS_ENUM(NSUInteger, LocationCondation) {
 
 @interface LocalNotificationItem : NSObject
 
-@property (nonatomic, assign) LocalNotificationType type; //类型
+@property (nonatomic, assign) LocalNotificationType type; //推送类型
+@property (nonatomic, assign) LocalNotificationCategory category;//展现样式 有限类型
 @property (nonatomic, copy) NSString* title;              //标题
 @property (nonatomic, copy) NSString* subTitle;           //副标题
 @property (nonatomic, copy) NSString* body;               //内容
