@@ -9,20 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+//类型
 typedef NS_ENUM(NSUInteger, LocalNotificationType) {
     LocalNotificationTypeInterval,      //基于时间戳推送
     LocalNotificationTypeCalendar,      //基于日期周期性推送
     LocalNotificationTypeLocation,      //基于地理位置推送
 };
-
-typedef NS_ENUM(NSUInteger, LocalNotificationCategory) {
-    LocalNotificationCategory0 = 0,//默认无样式
-    LocalNotificationCategory1,//这里需要提前确定好需求支持的样式
-    LocalNotificationCategory2,
-    LocalNotificationCategory3,
-};
-
-
 
 typedef NS_ENUM(NSUInteger, LocationCondation) {
     LocationCondationDefault,           //默认只有进入时推送
@@ -31,10 +23,32 @@ typedef NS_ENUM(NSUInteger, LocationCondation) {
     LocationCondationBoth,              //两种情况都推送
 };
 
+
+//组件样式
+typedef NS_ENUM(NSUInteger, LocalNotificationCategory) {
+    LocalNotificationCategory0 = 0,//默认无样式
+    LocalNotificationCategory1,//这里需要提前确定好需求支持的样式
+    LocalNotificationCategory2,
+    LocalNotificationCategory3,
+};
+
+
+//附件格式
+typedef NS_ENUM(NSUInteger, LocalNotificationAttachmentType) {
+    NotificationAttachmentTypeNone,
+    NotificationAttachmentTypeImage,
+    NotificationAttachmentTypeImageGif,
+    NotificationAttachmentTypeAudio,
+    NotificationAttachmentTypeMovie
+};
+
+
+
 @interface LocalNotificationItem : NSObject
 
 @property (nonatomic, assign) LocalNotificationType type; //推送类型
 @property (nonatomic, assign) LocalNotificationCategory category;//展现样式 有限类型
+@property (nonatomic, assign) LocalNotificationAttachmentType attachmentType;
 @property (nonatomic, copy) NSString* title;              //标题
 @property (nonatomic, copy) NSString* subTitle;           //副标题
 @property (nonatomic, copy) NSString* body;               //内容

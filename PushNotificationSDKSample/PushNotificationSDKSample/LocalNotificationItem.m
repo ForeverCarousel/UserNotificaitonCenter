@@ -24,7 +24,7 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
         _notificationID = strDate;
-        
+        _attachmentType = NotificationAttachmentTypeNone;
         _category = LocalNotificationCategory0;
     }
     return self;
@@ -42,6 +42,7 @@
     NSString *valuedSound = [sound stringByReplacingOccurrencesOfString:@" " withString:@""];
     _sound = valuedSound;
 }
+
 
 -(NSString *)description
 {

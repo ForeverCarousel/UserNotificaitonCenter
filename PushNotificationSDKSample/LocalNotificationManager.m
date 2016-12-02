@@ -12,6 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
+
 @interface LocalNotificationManager()
 
 @property (nonatomic, copy) callBack callBackBlock;
@@ -78,7 +79,7 @@ static LocalNotificationManager* manager = nil;
 {
     UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:item.timeInteval repeats:item.repeat];
     
-    UNNotificationContent * content = [self contentWithInfo:item];
+    UNNotificationContent * content = [self creatContentWithInfo:item];
     
     UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:content trigger:trigger];
 
@@ -99,7 +100,7 @@ static LocalNotificationManager* manager = nil;
     NSDateComponents *components = item.dateComponents;
     UNCalendarNotificationTrigger *trigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:components repeats:YES];
     
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:[self contentWithInfo:item] trigger:trigger];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:[self creatContentWithInfo:item] trigger:trigger];
     
     [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
         NSLog(@"添加周期性定时推送 ：%@", error ? [NSString stringWithFormat:@"error : %@", error] : @"success");
@@ -135,7 +136,7 @@ static LocalNotificationManager* manager = nil;
     
     UNLocationNotificationTrigger *trigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:item.repeat];
     
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:[self contentWithInfo:item] trigger:trigger];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:item.notificationID content:[self creatContentWithInfo:item] trigger:trigger];
     
     [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
         NSLog(@"添加指定位置推送 ：%@", error ? [NSString stringWithFormat:@"error : %@", error] : @"success");
@@ -148,20 +149,69 @@ static LocalNotificationManager* manager = nil;
 }
 
 
--(UNMutableNotificationContent*) contentWithInfo:(LocalNotificationItem*) item
+-(UNMutableNotificationContent*) creatContentWithInfo:(LocalNotificationItem*) item
 {
     UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
     content.title = item.title;
     content.subtitle = item.subTitle;
     content.body = item.body;
-    content.categoryIdentifier = self.categries[item.category];
     if (item.sound == nil) {
         content.sound = [UNNotificationSound defaultSound];
     }else{
         content.sound = [UNNotificationSound soundNamed:item.sound];
     }
-
+    content.categoryIdentifier = self.categries[item.category];
+    content.attachments = [self attachmentByType:item.attachmentType];
     return content;
+}
+
+
+- (NSArray*)attachmentByType:(LocalNotificationAttachmentType)type
+{
+    NSString *contentString = @"";
+    NSString *path = @"";
+    switch (type) {
+        case NotificationAttachmentTypeImage:
+            contentString = @"附件-图片";
+            path = [[NSBundle mainBundle] pathForResource:@"attachment" ofType:@"png"];
+            break;
+            
+        case NotificationAttachmentTypeImageGif:
+            contentString = @"附件-图片-GIF";
+            path = [[NSBundle mainBundle] pathForResource:@"eason" ofType:@"gif"];
+            break;
+            
+        case NotificationAttachmentTypeAudio:
+            contentString = @"附件-音频";
+            path = [[NSBundle mainBundle] pathForResource:@"张智霖 - 少女的祈祷" ofType:@"mp3"];
+            break;
+            
+        case NotificationAttachmentTypeMovie:
+            contentString = @"附件-视频";
+            path = [[NSBundle mainBundle] pathForResource:@"陈奕迅-K歌之王" ofType:@"mp4"];
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSError *error = nil;
+    /*    Attachment 不能超过大小限制
+    Supported   File Types                            Maximum Size
+    Audio       kUTTypeAudioInterchangeFileFormat     5 MB
+    Image       kUTTypeJPEG                           10 MB
+    Movie       kUTTypeMPEG                           50 MB
+     */
+    //这里url必须是file url。
+    UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"atta1" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
+    if (error) {
+        NSLog(@"attachment error : %@", error);
+    }
+    if (attachment) {
+        return @[attachment];
+    }
+    return nil;
+    
 }
 
 #pragma mark - 通知类别
@@ -239,10 +289,7 @@ static LocalNotificationManager* manager = nil;
 }
 
 
--(void)addAttachment
-{
-    
-}
+
 
 
 
