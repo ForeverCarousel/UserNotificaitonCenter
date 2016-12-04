@@ -27,18 +27,19 @@
     }];
     
     
+    
     NSDictionary* userinfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (userinfo)
     {
-        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"有需要处理的推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [a show];
-        NSLog(@"有需要处理的推送内容");
+//        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"有需要处理的推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+//        [a show];
+//        NSLog(@"有需要处理的推送内容");
     }
     else
     {
-        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"没有需要处理的推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [a show];
-        NSLog(@"没有需要处理的推送内容");
+//        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"没有需要处理的推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+//        [a show];
+//        NSLog(@"没有需要处理的推送内容");
     }
     return YES;
 }
@@ -47,10 +48,12 @@
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     NSLog(@"DeviceToken is : %@",deviceToken);
+    [[UserNotificationCenter defaultCenter] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
+    [[UserNotificationCenter defaultCenter] application:application didFailToRegisterForRemoteNotificationsWithError:error];
     NSLog(@"fail to register Error : %@",error.description);
 
 }

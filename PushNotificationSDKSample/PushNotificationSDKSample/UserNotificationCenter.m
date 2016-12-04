@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "LocalNotificationItem.h"
-#import "localnotificationManager.h"
+#import "LocalNotificationManager.h"
 #import "RemoteNotificaitonManager.h"
 
 static UserNotificationCenter* manager = nil;
@@ -59,6 +59,8 @@ static inline CGFloat version (){
 
 -(void)registNotificationsWithFinishBlock:(callBack)block
 {
+    //暂时
+    [LocalNotificationManager shareInstance]; //这里需要借用一下本地通知的category
     if ([self isNotifyEnable]) {
         return;
     }
@@ -162,7 +164,14 @@ static inline CGFloat version (){
     }];
 }
 
-#pragma mark Delegate
+#pragma mark - User Notification Center Delegate
+/*
+ willPresentNotification:withCompletionHandler 用于前台运行
+ didReceiveNotificationResponse:withCompletionHandler 用于后台及程序退出
+ didReceiveRemoteNotification:fetchCompletionHandler用于静默推送
+ 
+
+ */
 // The method will be called on the delegate only if the application is in the foreground. If the method is not implemented or the handler is not called in a timely manner then the notification will not be presented. The application can choose to have the notification presented as a sound, badge, alert and/or in the notification list. This decision should be based on whether the information in the notification is otherwise visible to the user.
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
 {
@@ -183,7 +192,9 @@ static inline CGFloat version (){
     if ([response.notification.request.content.categoryIdentifier isEqualToString:@"LocalNotificationCategory1"]) {
         [self handleResponse:response];
     }
-    completionHandler();
+    //可以设置当收到通知后, 有哪些效果呈现(声音/提醒/数字角标)
+    completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+//    completionHandler();
 }
 
 - (void)handleResponse:(UNNotificationResponse *)response {
@@ -198,6 +209,35 @@ static inline CGFloat version (){
     }
 
 }
+
+
+
+#pragma mark - Application Delegate
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -282,6 +322,9 @@ static inline CGFloat version (){
     else if ([identifier isEqualToString:@"answerAction"]){
     }
 }
+
+
+
 
 
 

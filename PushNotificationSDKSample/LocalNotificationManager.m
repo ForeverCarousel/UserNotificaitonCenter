@@ -235,13 +235,13 @@ static LocalNotificationManager* manager = nil;
      */
     UNNotificationAction *action1 = [UNNotificationAction
                       actionWithIdentifier:@"action1"
-                                     title:@"需要解锁"
+                                     title:@"YKHD定义按钮一"
                                    options:UNNotificationActionOptionAuthenticationRequired];
     
     UNNotificationAction *action2 = [UNNotificationAction
                       actionWithIdentifier:@"action2"
-                                     title:@"启动app"
-                                    options:UNNotificationActionOptionForeground];
+                                     title:@"启动iPad优酷客户端"
+                                    options:UNNotificationActionOptionForeground | UNNotificationActionOptionDestructive];
     
     //intentIdentifiers，需要填写你想要添加到哪个推送消息的 id
     UNNotificationCategory *category1 = [UNNotificationCategory

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "LocalNotificationItem.h"
+#import <UIKit/UIKit.h>
 //@class LocalNotificationItem;
 
 typedef void(^callBack)(BOOL result , _Nullable id response);
 
 @interface UserNotificationCenter : NSObject
 
-+ (UserNotificationCenter* )defaultCenter;
++ (UserNotificationCenter*)defaultCenter;
 -(void)registNotificationsWithFinishBlock:(callBack)block;
 
 
@@ -38,8 +39,13 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
 
 
 
+#pragma mark  AppDelegate
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler;
 
 
 
