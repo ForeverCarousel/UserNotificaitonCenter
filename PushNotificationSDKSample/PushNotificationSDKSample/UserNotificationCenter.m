@@ -59,8 +59,8 @@ static inline CGFloat version (){
 
 -(void)registNotificationsWithFinishBlock:(callBack)block
 {
-    //暂时
-    [LocalNotificationManager shareInstance]; //这里需要借用一下本地通知的category
+    //暂时 这里需要借用一下本地通知的category
+    [LocalNotificationManager shareInstance];
     if ([self isNotifyEnable]) {
         return;
     }

@@ -20,6 +20,12 @@
 @implementation NotificationService
 
 
+/**
+ 当推送内容的中包含 mutable-content=1字段时 系统会在获取到通知时现将内容交由本类处理 在有限时间内处理完后才会Push到对应的Applicaion  
+ 我们可以根据需求定制有限个数样式的推送  对content进行进一步的处理：
+ 1.可以根据已经注册好的category生成需要按钮样式和触发操作 这个需要在ContentExtension中 设置需求的categoryID
+ 2.可以根据推送内容 生成对应的attachment
+ */
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
     
     NSLog(@"didReceiveNotificationRequest");
@@ -27,7 +33,7 @@
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
     
-    //通过自定义的“id”字段判断是否要对内容进行修改
+    //通过自定义的字段判断是否要对内容进行修改
 //    NSString *identifier = self.bestAttemptContent.userInfo[@"id"];
     BOOL needHandleContent = [self.bestAttemptContent.userInfo[@"needhandle"] boolValue];
 
@@ -37,7 +43,7 @@
     
     }
     
-    //如果有"image"字段，那么执行下载图片的操作
+    //如果有"image"字段，那么执行下载图片的操作 动态图也属于这一类
     NSString *imageURL = self.bestAttemptContent.userInfo[@"image"];
     if (imageURL) {
         [self downloadAndSave:[NSURL URLWithString:imageURL] block:^(NSURL *localURL) {
@@ -47,11 +53,7 @@
                 NSLog(@"生成图片attachment 失败：%@", err);
             }else{
                 self.bestAttemptContent.attachments = @[attachment];
-                
-                
-            //示例添加action  这里需要重新封装暂时写一个示例 这里暂时取得本地通知的一个样式
-                 self.bestAttemptContent.categoryIdentifier = @"LocalNotificationCategory1";
-
+                //将处理完后的内容生成attachment 然后抛给App
                 self.contentHandler(self.bestAttemptContent);
             }
             

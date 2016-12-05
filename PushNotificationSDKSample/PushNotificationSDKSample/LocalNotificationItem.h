@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, LocationCondation) {
 };
 
 
-//组件样式
+//组件样式 有限样式可动态配置
 typedef NS_ENUM(NSUInteger, LocalNotificationCategory) {
     LocalNotificationCategory0 = 0,//默认无样式
     LocalNotificationCategory1,//这里需要提前确定好需求支持的样式
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, LocalNotificationCategory) {
 };
 
 
-//附件格式
+//附件样式 有限样式 有限大小
 typedef NS_ENUM(NSUInteger, LocalNotificationAttachmentType) {
     NotificationAttachmentTypeNone,
     NotificationAttachmentTypeImage,
@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger, LocalNotificationAttachmentType) {
 
 @property (nonatomic, strong) NSDateComponents* dateComponents; //触发通知的日期  type = 1 时有效
 
-#warning  陈晓龙 这里应该是两个double类型的 暂时先用CGPoint
+//暂时  这里应该是两个double类型的 暂时先用CGPoint
 @property (nonatomic, assign) CGPoint Coordinate2D;       //坐标  type = 2 时有效
 @property (nonatomic, assign) CGFloat radius;             //以上述坐标为中心的半径  type = 2 时有效
 @property (nonatomic, assign) LocationCondation condation;//推送时机
