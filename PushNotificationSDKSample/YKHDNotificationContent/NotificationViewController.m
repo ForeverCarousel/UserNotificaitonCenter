@@ -61,6 +61,7 @@
     _mylabel2.text = @"自定义控件2";
     [self.view addSubview:_mylabel2];
     
+    
     self.mylabel3   = [[UILabel alloc] initWithFrame:CGRectMake(300, 150, 100, 50)];
     _mylabel3.textAlignment = NSTextAlignmentLeft;
     _mylabel3.font = [UIFont systemFontOfSize:14.0f];
@@ -97,7 +98,7 @@
 - (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption option))completion
 {
     NSString *actionID = response.actionIdentifier;
-    
+    NSLog(@"action identifier is: %@",actionID);
 //    if ([actionID isEqualToString:@"action.play"]) {
 //        NSLog(@"play");
 //        self.bodyLabel.text = @"play taped~";

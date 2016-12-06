@@ -16,8 +16,9 @@ typedef void(^callBack)(BOOL result ,_Nullable id response);
 @interface RemoteNotificaitonManager : NSObject
 
 
-+(RemoteNotificaitonManager*) shareInstance;
--(void)registRemoteNotificationWithFinishBlock:(callBack)block;
++(nonnull RemoteNotificaitonManager*) shareInstance;
+
+-(void)registRemoteNotificationWithFinishBlock:(nonnull callBack)block;
 
 
 @end

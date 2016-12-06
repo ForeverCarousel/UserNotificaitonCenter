@@ -16,10 +16,6 @@ static RemoteNotificaitonManager* manager = nil;
 
 @implementation RemoteNotificaitonManager
 
-static inline CGFloat version (){
-    CGFloat version = [[UIDevice currentDevice].systemVersion floatValue];
-    return version;
-}
 
 
 
@@ -43,7 +39,10 @@ static inline CGFloat version (){
 }
 
 
-
+-(void)registRemoteNotificationWithFinishBlock:(nonnull callBack)block
+{
+    
+}
 
 
 

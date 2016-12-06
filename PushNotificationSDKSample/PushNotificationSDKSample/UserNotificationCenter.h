@@ -15,8 +15,8 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
 
 @interface UserNotificationCenter : NSObject
 
-+ (UserNotificationCenter*)defaultCenter;
--(void)registNotificationsWithFinishBlock:(callBack)block;
++ (nonnull UserNotificationCenter*)defaultCenter;
+-(void)registNotificationsWithFinishBlock:(nonnull callBack)block;
 
 
 
@@ -41,11 +41,11 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
 
 #pragma mark  AppDelegate
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
+- (void)application:(nullable UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken;
 
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+- (void)application:(nullable UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(nullable NSError *)error;
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler;
+- (void)application:(nullable UIApplication *)application didReceiveRemoteNotification:(nullable NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult result))completionHandler;
 
 
 

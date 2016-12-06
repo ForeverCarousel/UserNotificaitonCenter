@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, LocationCondation) {
 };
 
 
-//组件样式 有限样式可动态配置
+//组件样式 有限样式 可动态配置
 typedef NS_ENUM(NSUInteger, LocalNotificationCategory) {
     LocalNotificationCategory0 = 0,//默认无样式
     LocalNotificationCategory1,//这里需要提前确定好需求支持的样式

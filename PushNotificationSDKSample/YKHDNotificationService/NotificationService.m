@@ -38,7 +38,7 @@
     BOOL needHandleContent = [self.bestAttemptContent.userInfo[@"needhandle"] boolValue];
 
     if (needHandleContent) {
-        self.bestAttemptContent.body = @"这是前段处理后展示的内容";
+        self.bestAttemptContent.body = @"这是前端处理后展示的内容";
         self.contentHandler(self.bestAttemptContent);
     
     }
@@ -53,6 +53,8 @@
                 NSLog(@"生成图片attachment 失败：%@", err);
             }else{
                 self.bestAttemptContent.attachments = @[attachment];
+//                self.bestAttemptContent.categoryIdentifier = @"LocalNotificationCategory1";
+
                 //将处理完后的内容生成attachment 然后抛给App
                 self.contentHandler(self.bestAttemptContent);
             }
@@ -61,10 +63,10 @@
             
         }];
     }
-    //如果有"mp3"字段，那么执行下载音频的操作
-    NSString *mp3URL = self.bestAttemptContent.userInfo[@"mp3"];
-    if (mp3URL) {
-        [self downloadAndSave:[NSURL URLWithString:mp3URL] block:^(NSURL *localURL) {
+    //如果有"audio"字段，那么执行下载音频的操作
+    NSString *audioURL = self.bestAttemptContent.userInfo[@"audio"];
+    if (audioURL) {
+        [self downloadAndSave:[NSURL URLWithString:audioURL] block:^(NSURL *localURL) {
             NSLog(@"%@", localURL);
             NSError *err;
             UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"video" URL:localURL options:nil error:&err];
@@ -72,6 +74,8 @@
                 NSLog(@"生成音频attachment 失败：%@", err);
             }else{
                 self.bestAttemptContent.attachments = @[attachment];
+//                self.bestAttemptContent.categoryIdentifier = @"LocalNotificationCategory1";
+
                 self.contentHandler(self.bestAttemptContent);
             }
         }];
