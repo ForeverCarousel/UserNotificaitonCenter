@@ -9,14 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "LocalNotificationItem.h"
 #import <UIKit/UIKit.h>
-//@class LocalNotificationItem;
 
 typedef void(^callBack)(BOOL result , _Nullable id response);
 
 @interface UserNotificationCenter : NSObject
 
 + (nonnull UserNotificationCenter*)defaultCenter;
--(void)registNotificationsWithFinishBlock:(nonnull callBack)block;
 
 
 
@@ -37,9 +35,19 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
 
 #pragma mark - 远程通知
 
+/**
+ 注册远程通知
+
+ @param callBack 回调结果
+ */
+-(void)registRemoteNotificationWithFinishBlock:(nonnull callBack)callBack;
 
 
-#pragma mark  AppDelegate
+
+
+#pragma mark  Receive AppDelegate Message
+
+- (void)handleNotificationFromLaunchOption:(nullable NSDictionary *)launchOptions;
 
 - (void)application:(nullable UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken;
 
@@ -48,6 +56,7 @@ typedef void(^callBack)(BOOL result , _Nullable id response);
 - (void)application:(nullable UIApplication *)application didReceiveRemoteNotification:(nullable NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult result))completionHandler;
 
 
+-(void)application:(nullable UIApplication *)application didRegisterUserNotificationSettings:(nullable UIUserNotificationSettings *)notificationSettings;
 
 
 

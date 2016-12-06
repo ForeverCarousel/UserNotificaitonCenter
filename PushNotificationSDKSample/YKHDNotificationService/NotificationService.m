@@ -66,10 +66,11 @@
     //如果有"audio"字段，那么执行下载音频的操作
     NSString *audioURL = self.bestAttemptContent.userInfo[@"audio"];
     if (audioURL) {
+        NSLog(@"开始下载推送内容");
         [self downloadAndSave:[NSURL URLWithString:audioURL] block:^(NSURL *localURL) {
             NSLog(@"%@", localURL);
             NSError *err;
-            UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"video" URL:localURL options:nil error:&err];
+            UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"audio" URL:localURL options:nil error:&err];
             if (err) {
                 NSLog(@"生成音频attachment 失败：%@", err);
             }else{
@@ -99,7 +100,6 @@
     }
     
     
-    NSLog(@"%@", self.bestAttemptContent.userInfo);
 }
 
 - (void)serviceExtensionTimeWillExpire {
@@ -115,7 +115,8 @@
 {
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
+        NSLog(@"完成下载推送内容 错误:%@",error.description);
+
         if (location) {
             NSArray *cache = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
             NSString *cachePath = [cache objectAtIndex:0];
@@ -132,59 +133,7 @@
     [downloadTask resume];
 }
 
-/*
-- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
-    
-    self.contentHandler = contentHandler;
-    self.bestAttemptContent = [request.content mutableCopy];
-    NSLog(@"didReceiveNotificationRequest 内容:%@",[request.content.userInfo objectForKey:@"type"]);
-    NSString * attchUrl = [request.content.userInfo objectForKey:@"image"];
-    //下载图片,放到本地
-    UIImage * imageFromUrl = [self getImageFromURL:attchUrl];
-    
-    //获取documents目录
-    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString * documentsDirectoryPath = [paths firstObject];
-    
-    NSString * localPath = [self saveImage:imageFromUrl withFileName:@"MyImage" ofType:@"png" inDirectory:documentsDirectoryPath];
-    if (localPath && ![localPath isEqualToString:@""]) {
-        UNNotificationAttachment * attachment = [UNNotificationAttachment attachmentWithIdentifier:@"photo" URL:[NSURL URLWithString:[@"file://" stringByAppendingString:localPath]] options:nil error:nil];
-        if (attachment) {
-            self.bestAttemptContent.attachments = @[attachment];
-        }
-    }
-    self.contentHandler(self.bestAttemptContent);
-}
-
-- (UIImage *) getImageFromURL:(NSString *)fileURL {
-    NSLog(@"执行图片下载函数");
-    UIImage * result;
-    //dataWithContentsOfURL方法需要https连接
-    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
-    result = [UIImage imageWithData:data];
-    
-    return result;
-}
-
-//将所下载的图片保存到本地
-- (NSString *) saveImage:(UIImage *)image withFileName:(NSString *)imageName ofType:(NSString *)extension inDirectory:(NSString *)directoryPath {
-    NSString *urlStr = @"";
-    if ([[extension lowercaseString] isEqualToString:@"png"]){
-        urlStr = [directoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@", imageName, @"png"]];
-        [UIImagePNGRepresentation(image) writeToFile:urlStr options:NSAtomicWrite error:nil];
-        
-    } else if ([[extension lowercaseString] isEqualToString:@"jpg"] ||
-               [[extension lowercaseString] isEqualToString:@"jpeg"]){
-        urlStr = [directoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@", imageName, @"jpg"]];
-        [UIImageJPEGRepresentation(image, 1.0) writeToFile:urlStr options:NSAtomicWrite error:nil];
-        
-    } else{
-        NSLog(@"extension error");
-    }
-    return urlStr;
-}
 
 
 
-*/
 @end

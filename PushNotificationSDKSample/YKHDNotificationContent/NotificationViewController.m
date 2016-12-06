@@ -80,7 +80,7 @@
     UNNotificationContent *content = notification.request.content;
     UNNotificationAttachment *attachment = content.attachments[0];
     /*
-     file:///var/mobile/Library/SpringBoard/PushStore/Attachments/com.youku.pushSDKDemo/7bacb9e3ca70357e9a974533c5a8cabefc0a7034.jpeg 从URL可以看出来这里读取的是servic处理过后的的内容 并且其内容的空间和app是独立的 根据bundleID来映射的
+     file:///var/mobile/Library/SpringBoard/PushStore/Attachments/com.youku.pushSDKDemo/7bacb9e3ca70357e9a974533c5a8cabefc0a7034.jpeg 从URL可以看出来这里读取的是servic处理过后的的内容 并且其内容的空间和app是独立的 应该是根据bundleID来映射的
      */
     if ([attachment.URL startAccessingSecurityScopedResource]) {
         NSData *data = [NSData dataWithContentsOfURL:attachment.URL];

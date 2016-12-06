@@ -16,7 +16,7 @@
 @interface LocalNotificationManager()
 
 @property (nonatomic, copy) callBack callBackBlock;
-@property (nonatomic, strong) NSArray* categries;
+@property (nonatomic, strong) NSMutableArray* categries;
 @end
 
 
@@ -28,19 +28,16 @@ static LocalNotificationManager* manager = nil;
 {
     self = [super init];
     if (self) {
-        self.categries = @[@"LocalNotificationCategory0",@"LocalNotificationCategory1",@"LocalNotificationCategory2",@"LocalNotificationCategory3"];
-        [self setCategoriesWithCategoryIdetifiers:_categries];
+        __weak typeof (self) weakSelf = self;
+        [[UNUserNotificationCenter currentNotificationCenter] getNotificationCategoriesWithCompletionHandler:^(NSSet<UNNotificationCategory *> * _Nonnull categories) {
+            self.categries  = [NSMutableArray array];
+            for (UNNotificationCategory* category in categories) {
+                [weakSelf.categries addObject:category.identifier];
+            }
+        }];
+    
     }
     return self;
-}
-
-+(LocalNotificationManager* ) shareInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        manager = [[self  alloc] init];
-    });
-    return manager;
 }
 
 
@@ -214,79 +211,6 @@ static LocalNotificationManager* manager = nil;
     
 }
 
-#pragma mark - 通知类别
-
-- (void)setCategoriesWithCategoryIdetifiers:(NSArray*)categories
-{
-    /* action options
-     identifier：行为标识符，用于调用代理方法时识别是哪种行为。
-     title：行为名称。
-     以下可以组合配置
-     UNNotificationActionOptionAuthenticationRequired = (1 << 0), 是否需要解锁
-     UNNotificationActionOptionDestructive = (1 << 1),            是否显示为红色
-     UNNotificationActionOptionForeground = (1 << 2),             是否启动App
-     behavior：点击按钮文字输入，是否弹出键盘
-    */
-    
-    /* category options
-     UNNotificationCategoryOptionNone = (0), 关掉通知时不通知代理方法
-     UNNotificationCategoryOptionCustomDismissAction = (1 << 0),关掉通知时需要通知代理方法
-
-     */
-    UNNotificationAction *action1 = [UNNotificationAction
-                      actionWithIdentifier:@"action1"
-                                     title:@"YKHD定义按钮一"
-                                   options:UNNotificationActionOptionAuthenticationRequired];
-    
-    UNNotificationAction *action2 = [UNNotificationAction
-                      actionWithIdentifier:@"action2"
-                                     title:@"启动iPad优酷客户端"
-                                    options:UNNotificationActionOptionForeground | UNNotificationActionOptionDestructive];
-    
-    //intentIdentifiers，需要填写你想要添加到哪个推送消息的 id
-    UNNotificationCategory *category1 = [UNNotificationCategory
-                            categoryWithIdentifier:categories[1]
-                                           actions:@[action1, action2]
-                                 intentIdentifiers:@[]
-                                           options:UNNotificationCategoryOptionNone];
-    
-    
-    
-    
-    UNNotificationAction *action3 = [UNNotificationAction
-                      actionWithIdentifier:@"action3"
-                                     title:@"红色样式不启动App"
-                                   options:UNNotificationActionOptionDestructive];
-    
-    UNNotificationAction *action4 = [UNNotificationAction
-                      actionWithIdentifier:@"action4"
-                                     title:@"红色解锁启动"
-                                     options:UNNotificationActionOptionAuthenticationRequired | UNNotificationActionOptionDestructive | UNNotificationActionOptionForeground];
-    
-    UNNotificationCategory *category2 = [UNNotificationCategory
-                          categoryWithIdentifier:categories[2]
-                                         actions:@[action3, action4]
-                               intentIdentifiers:@[]
-                                         options:UNNotificationCategoryOptionCustomDismissAction];
-    
-    
-    
-    
-    UNTextInputNotificationAction *action5 = [UNTextInputNotificationAction
-                               actionWithIdentifier:@"action5"
-                                              title:@""
-                                            options:UNNotificationActionOptionForeground
-                               textInputButtonTitle:@"发送吧"
-                               textInputPlaceholder:@"输入回复内容"];
-    
-    UNNotificationCategory *category3 = [UNNotificationCategory
-                             categoryWithIdentifier:categories[3]
-                                            actions:@[action5]
-                                  intentIdentifiers:@[]
-                                            options:UNNotificationCategoryOptionCustomDismissAction];
-    
-    [[UNUserNotificationCenter currentNotificationCenter] setNotificationCategories:[NSSet setWithObjects:category1, category2, category3, nil]];
-}
 
 
 

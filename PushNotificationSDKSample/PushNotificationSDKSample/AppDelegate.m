@@ -20,53 +20,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UserNotificationCenter defaultCenter] removeLocalNotificaitons];
     
-    [[UserNotificationCenter defaultCenter] registNotificationsWithFinishBlock:^(BOOL result, id  _Nullable response) {
-        
+    [[UserNotificationCenter defaultCenter] registRemoteNotificationWithFinishBlock:^(BOOL result, id  _Nullable response) {
+    
     }];
     
     
-    
-    NSDictionary* userinfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    if (userinfo)
-    {
-//        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"有需要处理的推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-//        [a show];
-//        NSLog(@"有需要处理的推送内容");
-    }
-    else
-    {
-//        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"没有需要处理的推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-//        [a show];
-//        NSLog(@"没有需要处理的推送内容");
-    }
+
     return YES;
 }
 
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    NSLog(@"DeviceToken is : %@",deviceToken);
     [[UserNotificationCenter defaultCenter] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     [[UserNotificationCenter defaultCenter] application:application didFailToRegisterForRemoteNotificationsWithError:error];
-    NSLog(@"fail to register Error : %@",error.description);
 
 }
 
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
-    if (notificationSettings.types == UIUserNotificationTypeNone) {
-        NSLog(@"用户拒绝了推送权限");
-    }
-    else{
-        NSLog(@"获得推送权限");
-        [application registerForRemoteNotifications];
-    }
+    
+    [[UserNotificationCenter defaultCenter] application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
 
@@ -81,25 +60,11 @@
 
 
 
-//Implement the application:didReceiveRemoteNotification:fetchCompletionHandler: method instead of this one whenever possible. If your delegate implements both methods, the app object calls the application:didReceiveRemoteNotification:fetchCompletionHandler: method.
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    
-}
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
-    if (application.applicationState == UIApplicationStateActive) {
-        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"前台状态：获取到推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [a show];
-    }
-    else if(application.applicationState == UIApplicationStateInactive)
-    {
-        UIAlertView* a = [[UIAlertView alloc] initWithTitle:@"后台状态：获取到推送内容" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [a show];
+    [[UserNotificationCenter defaultCenter] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
         
-    }
-    
 }
 
 

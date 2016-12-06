@@ -13,7 +13,6 @@ typedef void(^callBack)(BOOL result ,_Nullable id response);
 
 @interface LocalNotificationManager : NSObject
 
-+(nonnull LocalNotificationManager*) shareInstance;
 
 - (void)registNotificaitonWithInfo:(nonnull LocalNotificationItem*)item  FinishBlock:(_Nonnull callBack) callBack;
 

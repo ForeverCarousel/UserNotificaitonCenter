@@ -29,19 +29,11 @@ static RemoteNotificaitonManager* manager = nil;
     return self;
 }
 
-+(RemoteNotificaitonManager* ) shareInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        manager = [[self  alloc] init];
-    });
-    return manager;
-}
 
 
 -(void)registRemoteNotificationWithFinishBlock:(nonnull callBack)block
 {
-    
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 

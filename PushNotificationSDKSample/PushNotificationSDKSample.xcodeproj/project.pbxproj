@@ -27,13 +27,14 @@
 		BAC00C6F1DF016F800E87A78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC00C6E1DF016F800E87A78 /* CoreLocation.framework */; };
 		BAC00C721DF026C700E87A78 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC00C711DF026C700E87A78 /* LocalNotificationManager.m */; };
 		BAC00C771DF02E4200E87A78 /* RemoteNotificaitonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC00C761DF02E4200E87A78 /* RemoteNotificaitonManager.m */; };
-		BAF544AD1DF17B08005C3145 /* attachment.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544AC1DF17B08005C3145 /* attachment.png */; };
+		BAF544AD1DF17B08005C3145 /* attachment1.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544AC1DF17B08005C3145 /* attachment1.png */; };
 		BAF544AF1DF17D7B005C3145 /* attachment2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544AE1DF17D7B005C3145 /* attachment2.png */; };
 		BAF544B11DF18B78005C3145 /* eason.gif in Resources */ = {isa = PBXBuildFile; fileRef = BAF544B01DF18B78005C3145 /* eason.gif */; };
 		BAF544B51DF1972F005C3145 /* 张智霖 - 少女的祈祷.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BAF544B41DF1972F005C3145 /* 张智霖 - 少女的祈祷.mp3 */; };
 		BAF544B71DF198B8005C3145 /* 陈奕迅-K歌之王.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BAF544B61DF198B8005C3145 /* 陈奕迅-K歌之王.mp4 */; };
 		BAF544BB1DF516B0005C3145 /* 示意图.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544B91DF516B0005C3145 /* 示意图.png */; };
 		BAF544BC1DF516B0005C3145 /* 通知附件大小限制.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544BA1DF516B0005C3145 /* 通知附件大小限制.png */; };
+		BAF544C31DF6C48D005C3145 /* attachment.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544C21DF6C48D005C3145 /* attachment.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,13 +101,14 @@
 		BAC00C711DF026C700E87A78 /* LocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalNotificationManager.m; path = ../LocalNotificationManager.m; sourceTree = "<group>"; };
 		BAC00C751DF02E4200E87A78 /* RemoteNotificaitonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteNotificaitonManager.h; sourceTree = "<group>"; };
 		BAC00C761DF02E4200E87A78 /* RemoteNotificaitonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteNotificaitonManager.m; sourceTree = "<group>"; };
-		BAF544AC1DF17B08005C3145 /* attachment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment.png; sourceTree = "<group>"; };
+		BAF544AC1DF17B08005C3145 /* attachment1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment1.png; sourceTree = "<group>"; };
 		BAF544AE1DF17D7B005C3145 /* attachment2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment2.png; sourceTree = "<group>"; };
 		BAF544B01DF18B78005C3145 /* eason.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eason.gif; sourceTree = "<group>"; };
 		BAF544B41DF1972F005C3145 /* 张智霖 - 少女的祈祷.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "张智霖 - 少女的祈祷.mp3"; sourceTree = "<group>"; };
 		BAF544B61DF198B8005C3145 /* 陈奕迅-K歌之王.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "陈奕迅-K歌之王.mp4"; sourceTree = "<group>"; };
 		BAF544B91DF516B0005C3145 /* 示意图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "示意图.png"; sourceTree = "<group>"; };
 		BAF544BA1DF516B0005C3145 /* 通知附件大小限制.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通知附件大小限制.png"; sourceTree = "<group>"; };
+		BAF544C21DF6C48D005C3145 /* attachment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +257,8 @@
 		BAF544BD1DF58A6B005C3145 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				BAF544AC1DF17B08005C3145 /* attachment.png */,
+				BAF544C21DF6C48D005C3145 /* attachment.png */,
+				BAF544AC1DF17B08005C3145 /* attachment1.png */,
 				BAF544AE1DF17D7B005C3145 /* attachment2.png */,
 				BAF544B01DF18B78005C3145 /* eason.gif */,
 				BAF544B41DF1972F005C3145 /* 张智霖 - 少女的祈祷.mp3 */,
@@ -386,7 +389,8 @@
 				BA8749821DED566000C9F896 /* LaunchScreen.storyboard in Resources */,
 				BA87497F1DED566000C9F896 /* Assets.xcassets in Resources */,
 				BAF544B11DF18B78005C3145 /* eason.gif in Resources */,
-				BAF544AD1DF17B08005C3145 /* attachment.png in Resources */,
+				BAF544C31DF6C48D005C3145 /* attachment.png in Resources */,
+				BAF544AD1DF17B08005C3145 /* attachment1.png in Resources */,
 				BAF544BC1DF516B0005C3145 /* 通知附件大小限制.png in Resources */,
 				BA87497D1DED566000C9F896 /* Main.storyboard in Resources */,
 				BAF544AF1DF17D7B005C3145 /* attachment2.png in Resources */,
