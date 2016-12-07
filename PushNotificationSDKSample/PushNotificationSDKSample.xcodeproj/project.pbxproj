@@ -23,10 +23,10 @@
 		BA8749A71DEEE8BF00C9F896 /* YKHDNotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BA8749991DEEE8BE00C9F896 /* YKHDNotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BA8749B31DEEE8E800C9F896 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8749B21DEEE8E800C9F896 /* NotificationService.m */; };
 		BA8749B71DEEE8E800C9F896 /* YKHDNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BA8749AF1DEEE8E700C9F896 /* YKHDNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BABE07D81DF7B6E4001D1834 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABE07D71DF7B6E4001D1834 /* LocalNotificationManager.m */; };
+		BABE07E71DF7B747001D1834 /* RemoteNotificaitonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABE07E61DF7B747001D1834 /* RemoteNotificaitonManager.m */; };
 		BAC00C6D1DF002C700E87A78 /* LocalNotificationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC00C6C1DF002C700E87A78 /* LocalNotificationItem.m */; };
 		BAC00C6F1DF016F800E87A78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC00C6E1DF016F800E87A78 /* CoreLocation.framework */; };
-		BAC00C721DF026C700E87A78 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC00C711DF026C700E87A78 /* LocalNotificationManager.m */; };
-		BAC00C771DF02E4200E87A78 /* RemoteNotificaitonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC00C761DF02E4200E87A78 /* RemoteNotificaitonManager.m */; };
 		BAF544AD1DF17B08005C3145 /* attachment1.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544AC1DF17B08005C3145 /* attachment1.png */; };
 		BAF544AF1DF17D7B005C3145 /* attachment2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544AE1DF17D7B005C3145 /* attachment2.png */; };
 		BAF544B11DF18B78005C3145 /* eason.gif in Resources */ = {isa = PBXBuildFile; fileRef = BAF544B01DF18B78005C3145 /* eason.gif */; };
@@ -94,13 +94,14 @@
 		BA8749B11DEEE8E800C9F896 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		BA8749B21DEEE8E800C9F896 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		BA8749B41DEEE8E800C9F896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BABE07C01DF7B509001D1834 /* 简单用法.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "简单用法.h"; path = "../简单用法.h"; sourceTree = "<group>"; };
+		BABE07D61DF7B6E4001D1834 /* LocalNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
+		BABE07D71DF7B6E4001D1834 /* LocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
+		BABE07E51DF7B747001D1834 /* RemoteNotificaitonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteNotificaitonManager.h; path = PushNotificationSDKSample/RemoteNotificaitonManager.h; sourceTree = "<group>"; };
+		BABE07E61DF7B747001D1834 /* RemoteNotificaitonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteNotificaitonManager.m; path = PushNotificationSDKSample/RemoteNotificaitonManager.m; sourceTree = "<group>"; };
 		BAC00C6B1DF002C700E87A78 /* LocalNotificationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationItem.h; sourceTree = "<group>"; };
 		BAC00C6C1DF002C700E87A78 /* LocalNotificationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationItem.m; sourceTree = "<group>"; };
 		BAC00C6E1DF016F800E87A78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BAC00C701DF026C700E87A78 /* LocalNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalNotificationManager.h; path = ../LocalNotificationManager.h; sourceTree = "<group>"; };
-		BAC00C711DF026C700E87A78 /* LocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalNotificationManager.m; path = ../LocalNotificationManager.m; sourceTree = "<group>"; };
-		BAC00C751DF02E4200E87A78 /* RemoteNotificaitonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteNotificaitonManager.h; sourceTree = "<group>"; };
-		BAC00C761DF02E4200E87A78 /* RemoteNotificaitonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteNotificaitonManager.m; sourceTree = "<group>"; };
 		BAF544AC1DF17B08005C3145 /* attachment1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment1.png; sourceTree = "<group>"; };
 		BAF544AE1DF17D7B005C3145 /* attachment2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment2.png; sourceTree = "<group>"; };
 		BAF544B01DF18B78005C3145 /* eason.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eason.gif; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				BA87498C1DED775A00C9F896 /* PushNotificationSDKSample.entitlements */,
+				BABE07C01DF7B509001D1834 /* 简单用法.h */,
 				BA8749751DED566000C9F896 /* AppDelegate.h */,
 				BA8749761DED566000C9F896 /* AppDelegate.m */,
 				BA8749781DED566000C9F896 /* ViewController.h */,
@@ -227,8 +229,8 @@
 		BAC00C731DF026D200E87A78 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				BAC00C701DF026C700E87A78 /* LocalNotificationManager.h */,
-				BAC00C711DF026C700E87A78 /* LocalNotificationManager.m */,
+				BABE07D61DF7B6E4001D1834 /* LocalNotificationManager.h */,
+				BABE07D71DF7B6E4001D1834 /* LocalNotificationManager.m */,
 				BAC00C6B1DF002C700E87A78 /* LocalNotificationItem.h */,
 				BAC00C6C1DF002C700E87A78 /* LocalNotificationItem.m */,
 			);
@@ -238,8 +240,8 @@
 		BAC00C741DF026EC00E87A78 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				BAC00C751DF02E4200E87A78 /* RemoteNotificaitonManager.h */,
-				BAC00C761DF02E4200E87A78 /* RemoteNotificaitonManager.m */,
+				BABE07E51DF7B747001D1834 /* RemoteNotificaitonManager.h */,
+				BABE07E61DF7B747001D1834 /* RemoteNotificaitonManager.m */,
 			);
 			name = Remote;
 			path = ..;
@@ -437,12 +439,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA87497A1DED566000C9F896 /* ViewController.m in Sources */,
+				BABE07D81DF7B6E4001D1834 /* LocalNotificationManager.m in Sources */,
 				BA8749771DED566000C9F896 /* AppDelegate.m in Sources */,
 				BAC00C6D1DF002C700E87A78 /* LocalNotificationItem.m in Sources */,
 				BA8749741DED566000C9F896 /* main.m in Sources */,
-				BAC00C721DF026C700E87A78 /* LocalNotificationManager.m in Sources */,
 				BA87498B1DED5F7500C9F896 /* UserNotificationCenter.m in Sources */,
-				BAC00C771DF02E4200E87A78 /* RemoteNotificaitonManager.m in Sources */,
+				BABE07E71DF7B747001D1834 /* RemoteNotificaitonManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,7 +75,7 @@
                 NSLog(@"生成音频attachment 失败：%@", err);
             }else{
                 self.bestAttemptContent.attachments = @[attachment];
-//                self.bestAttemptContent.categoryIdentifier = @"LocalNotificationCategory1";
+                self.bestAttemptContent.categoryIdentifier = @"LocalNotificationCategory2";
 
                 self.contentHandler(self.bestAttemptContent);
             }
