@@ -142,7 +142,7 @@ static inline CGFloat version (){
     self.authCallBack = block;
     
     if ([self isNotifyEnable]) {
-        self.authCallBack (YES, @"");
+        self.authCallBack (YES, @"已授权");
         return;
     }
     

@@ -25,6 +25,7 @@
 		BA8749B71DEEE8E800C9F896 /* YKHDNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BA8749AF1DEEE8E700C9F896 /* YKHDNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BABE07D81DF7B6E4001D1834 /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABE07D71DF7B6E4001D1834 /* LocalNotificationManager.m */; };
 		BABE07E71DF7B747001D1834 /* RemoteNotificaitonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABE07E61DF7B747001D1834 /* RemoteNotificaitonManager.m */; };
+		BABE08141DF7E7FE001D1834 /* 陈奕迅-人来人往.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BABE08131DF7E7FE001D1834 /* 陈奕迅-人来人往.mp4 */; };
 		BAC00C6D1DF002C700E87A78 /* LocalNotificationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC00C6C1DF002C700E87A78 /* LocalNotificationItem.m */; };
 		BAC00C6F1DF016F800E87A78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC00C6E1DF016F800E87A78 /* CoreLocation.framework */; };
 		BAF544AD1DF17B08005C3145 /* attachment1.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544AC1DF17B08005C3145 /* attachment1.png */; };
@@ -99,6 +100,7 @@
 		BABE07D71DF7B6E4001D1834 /* LocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
 		BABE07E51DF7B747001D1834 /* RemoteNotificaitonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteNotificaitonManager.h; path = PushNotificationSDKSample/RemoteNotificaitonManager.h; sourceTree = "<group>"; };
 		BABE07E61DF7B747001D1834 /* RemoteNotificaitonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteNotificaitonManager.m; path = PushNotificationSDKSample/RemoteNotificaitonManager.m; sourceTree = "<group>"; };
+		BABE08131DF7E7FE001D1834 /* 陈奕迅-人来人往.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "陈奕迅-人来人往.mp4"; sourceTree = "<group>"; };
 		BAC00C6B1DF002C700E87A78 /* LocalNotificationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationItem.h; sourceTree = "<group>"; };
 		BAC00C6C1DF002C700E87A78 /* LocalNotificationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationItem.m; sourceTree = "<group>"; };
 		BAC00C6E1DF016F800E87A78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -265,6 +267,7 @@
 				BAF544B01DF18B78005C3145 /* eason.gif */,
 				BAF544B41DF1972F005C3145 /* 张智霖 - 少女的祈祷.mp3 */,
 				BAF544B61DF198B8005C3145 /* 陈奕迅-K歌之王.mp4 */,
+				BABE08131DF7E7FE001D1834 /* 陈奕迅-人来人往.mp4 */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				BA87497D1DED566000C9F896 /* Main.storyboard in Resources */,
 				BAF544AF1DF17D7B005C3145 /* attachment2.png in Resources */,
 				BAF544B71DF198B8005C3145 /* 陈奕迅-K歌之王.mp4 in Resources */,
+				BABE08141DF7E7FE001D1834 /* 陈奕迅-人来人往.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

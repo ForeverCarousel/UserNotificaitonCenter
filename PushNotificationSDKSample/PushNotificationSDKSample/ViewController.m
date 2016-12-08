@@ -84,7 +84,7 @@
     LocalNotificationItem* item = [[LocalNotificationItem alloc] init];
     item.title = @"这是主标题";
     item.subTitle = @"这是副标题";
-    item.body = @" iOS 10 中，可以允许推送添加交互操作 action，这些 action 可以使得 App 在前台或后台执行一些逻辑代码。并且在锁屏界面通过 3d-touch 触发。如：推出键盘进行快捷回复，该功能以往只在 iMessage 中可行。";
+    item.body = @" 优酷是中国领先的视频分享网站，由古永锵在2006年6月21日创立。优酷网以 “快者为王”为产品理念，注重用户体验，不断完善服务策略，其卓尔不群的“快速播放，快速发布，快速搜索”的产品特性，充分满足用户日益增长的多元化互动需求，使之成为中国视频网站中的领军势力";
     item.type = LocalNotificationTypeInterval;
     item.category = self.ca;
     item.timeInteval = 2.0f;

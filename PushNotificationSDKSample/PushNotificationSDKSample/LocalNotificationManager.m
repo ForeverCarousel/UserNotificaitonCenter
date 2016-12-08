@@ -34,6 +34,7 @@ static LocalNotificationManager* manager = nil;
             for (UNNotificationCategory* category in categories) {
                 [weakSelf.categries addObject:category.identifier];
             }
+            [weakSelf.categries insertObject:@"LocalNotificationCategory0" atIndex:0]; //添加上默认类型
         }];
     
     }
@@ -185,7 +186,7 @@ static LocalNotificationManager* manager = nil;
             
         case NotificationAttachmentTypeMovie:
             contentString = @"附件-视频";
-            path = [[NSBundle mainBundle] pathForResource:@"陈奕迅-K歌之王" ofType:@"mp4"];
+            path = [[NSBundle mainBundle] pathForResource:@"陈奕迅-人来人往" ofType:@"mp4"];
             break;
             
         default:
