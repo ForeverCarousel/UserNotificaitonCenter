@@ -13,7 +13,7 @@
 #import "LocalNotificationItem.h"
 #import "LocalNotificationManager.h"
 #import "RemoteNotificaitonManager.h"
-
+#import <AFNetworking.h>
 
 typedef void(^authCallBack)(BOOL result, id response);
 

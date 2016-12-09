@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57C9DBCB1B1F7D19B080BAFC /* libPods-PushNotificationSDKSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A4E88E4F8F1FFCA3804A4C /* libPods-PushNotificationSDKSample.a */; };
+		89E0FA8CE699EBFD0D5BDA1C /* libPods-YKHDNotificationContent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D56E43DCA768731D1D429E6E /* libPods-YKHDNotificationContent.a */; };
 		BA8749741DED566000C9F896 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8749731DED566000C9F896 /* main.m */; };
 		BA8749771DED566000C9F896 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8749761DED566000C9F896 /* AppDelegate.m */; };
 		BA87497A1DED566000C9F896 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8749791DED566000C9F896 /* ViewController.m */; };
@@ -36,6 +38,7 @@
 		BAF544BB1DF516B0005C3145 /* 示意图.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544B91DF516B0005C3145 /* 示意图.png */; };
 		BAF544BC1DF516B0005C3145 /* 通知附件大小限制.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544BA1DF516B0005C3145 /* 通知附件大小限制.png */; };
 		BAF544C31DF6C48D005C3145 /* attachment.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF544C21DF6C48D005C3145 /* attachment.png */; };
+		E087B6F4053295BAF17270B2 /* libPods-YKHDNotificationService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C86F0D7D9BBAE8A1757125C8 /* libPods-YKHDNotificationService.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2170A64C60BC1F41EBF6F265 /* Pods-YKHDNotificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKHDNotificationContent.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKHDNotificationContent/Pods-YKHDNotificationContent.release.xcconfig"; sourceTree = "<group>"; };
+		3A785DEA9354909717B689A7 /* Pods-PushNotificationSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationSDKSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationSDKSample/Pods-PushNotificationSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
+		3EDD11EC1972EB653B9033AD /* Pods-YKHDNotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKHDNotificationService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKHDNotificationService/Pods-YKHDNotificationService.debug.xcconfig"; sourceTree = "<group>"; };
+		5E57DEAAF5EA7526C6F1F07A /* Pods-YKHDNotificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKHDNotificationContent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKHDNotificationContent/Pods-YKHDNotificationContent.debug.xcconfig"; sourceTree = "<group>"; };
+		A2A4E88E4F8F1FFCA3804A4C /* libPods-PushNotificationSDKSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushNotificationSDKSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51716C034BD49D089664D62 /* Pods-PushNotificationSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushNotificationSDKSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushNotificationSDKSample/Pods-PushNotificationSDKSample.release.xcconfig"; sourceTree = "<group>"; };
 		BA87496F1DED566000C9F896 /* PushNotificationSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushNotificationSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8749731DED566000C9F896 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA8749751DED566000C9F896 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +121,9 @@
 		BAF544B91DF516B0005C3145 /* 示意图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "示意图.png"; sourceTree = "<group>"; };
 		BAF544BA1DF516B0005C3145 /* 通知附件大小限制.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通知附件大小限制.png"; sourceTree = "<group>"; };
 		BAF544C21DF6C48D005C3145 /* attachment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attachment.png; sourceTree = "<group>"; };
+		C86F0D7D9BBAE8A1757125C8 /* libPods-YKHDNotificationService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YKHDNotificationService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C980794D927A53D3CF8F8B1A /* Pods-YKHDNotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKHDNotificationService.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKHDNotificationService/Pods-YKHDNotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		D56E43DCA768731D1D429E6E /* libPods-YKHDNotificationContent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YKHDNotificationContent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 				BAC00C6F1DF016F800E87A78 /* CoreLocation.framework in Frameworks */,
 				BA8749931DEEB33900C9F896 /* UserNotifications.framework in Frameworks */,
 				BA8749941DEEB33900C9F896 /* UserNotificationsUI.framework in Frameworks */,
+				57C9DBCB1B1F7D19B080BAFC /* libPods-PushNotificationSDKSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +144,7 @@
 			files = (
 				BA87499B1DEEE8BF00C9F896 /* UserNotificationsUI.framework in Frameworks */,
 				BA87499A1DEEE8BF00C9F896 /* UserNotifications.framework in Frameworks */,
+				89E0FA8CE699EBFD0D5BDA1C /* libPods-YKHDNotificationContent.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,12 +152,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E087B6F4053295BAF17270B2 /* libPods-YKHDNotificationService.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4D3667638678646F17BD12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A785DEA9354909717B689A7 /* Pods-PushNotificationSDKSample.debug.xcconfig */,
+				B51716C034BD49D089664D62 /* Pods-PushNotificationSDKSample.release.xcconfig */,
+				5E57DEAAF5EA7526C6F1F07A /* Pods-YKHDNotificationContent.debug.xcconfig */,
+				2170A64C60BC1F41EBF6F265 /* Pods-YKHDNotificationContent.release.xcconfig */,
+				3EDD11EC1972EB653B9033AD /* Pods-YKHDNotificationService.debug.xcconfig */,
+				C980794D927A53D3CF8F8B1A /* Pods-YKHDNotificationService.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BA8749661DED566000C9F896 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +182,7 @@
 				BA87499C1DEEE8BF00C9F896 /* YKHDNotificationContent */,
 				BA8749701DED566000C9F896 /* Products */,
 				BA8749901DEEB33900C9F896 /* Frameworks */,
+				4A4D3667638678646F17BD12 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +232,9 @@
 				BAC00C6E1DF016F800E87A78 /* CoreLocation.framework */,
 				BA8749911DEEB33900C9F896 /* UserNotifications.framework */,
 				BA8749921DEEB33900C9F896 /* UserNotificationsUI.framework */,
+				A2A4E88E4F8F1FFCA3804A4C /* libPods-PushNotificationSDKSample.a */,
+				D56E43DCA768731D1D429E6E /* libPods-YKHDNotificationContent.a */,
+				C86F0D7D9BBAE8A1757125C8 /* libPods-YKHDNotificationService.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -279,11 +311,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA8749861DED566000C9F896 /* Build configuration list for PBXNativeTarget "PushNotificationSDKSample" */;
 			buildPhases = (
+				A492B57238E7B1065ECE6E54 /* [CP] Check Pods Manifest.lock */,
 				BA87496B1DED566000C9F896 /* Sources */,
 				BA87496C1DED566000C9F896 /* Frameworks */,
 				BA87496D1DED566000C9F896 /* Resources */,
 				BA8749A61DEEE8BF00C9F896 /* Embed App Extensions */,
 				BAC00C781DF044A900E87A78 /* ShellScript */,
+				8C325DBA8E1C3C8576D7A176 /* [CP] Embed Pods Frameworks */,
+				44589392CA3423424753CC1B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,9 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA8749A81DEEE8BF00C9F896 /* Build configuration list for PBXNativeTarget "YKHDNotificationContent" */;
 			buildPhases = (
+				6F1BD852DC08D7CA00D34A16 /* [CP] Check Pods Manifest.lock */,
 				BA8749951DEEE8BE00C9F896 /* Sources */,
 				BA8749961DEEE8BE00C9F896 /* Frameworks */,
 				BA8749971DEEE8BE00C9F896 /* Resources */,
+				7B6735846B33171AEB502155 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,9 +354,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA8749B81DEEE8E800C9F896 /* Build configuration list for PBXNativeTarget "YKHDNotificationService" */;
 			buildPhases = (
+				A073F617E8DA1DDE0436AF26 /* [CP] Check Pods Manifest.lock */,
 				BA8749AB1DEEE8E700C9F896 /* Sources */,
 				BA8749AC1DEEE8E700C9F896 /* Frameworks */,
 				BA8749AD1DEEE8E700C9F896 /* Resources */,
+				1F59113F4323DDDC0FC08E56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -422,6 +461,111 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1F59113F4323DDDC0FC08E56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKHDNotificationService/Pods-YKHDNotificationService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44589392CA3423424753CC1B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PushNotificationSDKSample/Pods-PushNotificationSDKSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F1BD852DC08D7CA00D34A16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B6735846B33171AEB502155 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKHDNotificationContent/Pods-YKHDNotificationContent-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C325DBA8E1C3C8576D7A176 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PushNotificationSDKSample/Pods-PushNotificationSDKSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A073F617E8DA1DDE0436AF26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A492B57238E7B1065ECE6E54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		BAC00C781DF044A900E87A78 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +747,7 @@
 		};
 		BA8749871DED566000C9F896 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A785DEA9354909717B689A7 /* Pods-PushNotificationSDKSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -621,6 +766,7 @@
 		};
 		BA8749881DED566000C9F896 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B51716C034BD49D089664D62 /* Pods-PushNotificationSDKSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -637,6 +783,7 @@
 		};
 		BA8749A91DEEE8BF00C9F896 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E57DEAAF5EA7526C6F1F07A /* Pods-YKHDNotificationContent.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9A3VU99UZ5;
 				INFOPLIST_FILE = YKHDNotificationContent/Info.plist;
@@ -651,6 +798,7 @@
 		};
 		BA8749AA1DEEE8BF00C9F896 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2170A64C60BC1F41EBF6F265 /* Pods-YKHDNotificationContent.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YKHDNotificationContent/Info.plist;
@@ -663,6 +811,7 @@
 		};
 		BA8749B91DEEE8E800C9F896 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EDD11EC1972EB653B9033AD /* Pods-YKHDNotificationService.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9A3VU99UZ5;
 				INFOPLIST_FILE = YKHDNotificationService/Info.plist;
@@ -677,6 +826,7 @@
 		};
 		BA8749BA1DEEE8E800C9F896 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C980794D927A53D3CF8F8B1A /* Pods-YKHDNotificationService.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YKHDNotificationService/Info.plist;
